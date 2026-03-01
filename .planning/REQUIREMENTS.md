@@ -1,4 +1,4 @@
-# Requirements: Music DNA — Song Submission App
+# Requirements: Music DNA -- Song Submission App
 
 **Defined:** 2026-03-01
 **Core Value:** Every submission, regardless of which card was drawn, produces clean, consistent data that can be aggregated and fed to Claude to reveal the musical common ground between two musicians.
@@ -27,17 +27,17 @@
 
 ### Form
 
-- [ ] **FORM-01**: Form presents questions one at a time (progressive disclosure — conversational feel, not a spreadsheet)
+- [ ] **FORM-01**: Form presents questions one at a time (progressive disclosure -- conversational feel, not a spreadsheet)
 - [ ] **FORM-02**: Question text and placeholder copy adapts tone/framing based on which card was drawn
-- [ ] **FORM-03**: All 21 cards produce identical underlying data fields — adaptive framing is presentation-layer only, never schema-level
+- [ ] **FORM-03**: All 21 cards produce identical underlying data fields -- adaptive framing is presentation-layer only, never schema-level
 - [ ] **FORM-04**: User can enter song title and artist name
 - [ ] **FORM-05**: User can write why this song matters / what it means (free text)
 - [ ] **FORM-06**: User can select up to 2 primary hooks from: melody / groove+rhythm / lyrics / chord progression / texture+production / energy+feel / arrangement / indefinable
 - [ ] **FORM-07**: User can select whether lyrics matter: central / somewhat / not really
 - [ ] **FORM-08**: User can enter a standout instrument or sonic element (short text)
 - [ ] **FORM-09**: User can enter an emotional quality descriptor (short text, e.g. melancholy, joyful, driving)
-- [ ] **FORM-10**: User can rate energy level on a 1–5 scale
-- [ ] **FORM-11**: User can rate how much they love the song on a 1–5 scale
+- [ ] **FORM-10**: User can rate energy level on a 1-5 scale
+- [ ] **FORM-11**: User can rate how much they love the song on a 1-5 scale
 - [ ] **FORM-12**: User can select performance feasibility: yes as-is / yes with adaptation / probably not but the feel is the point / not sure
 - [ ] **FORM-13**: User can select performance desire: definitely / maybe / no
 - [ ] **FORM-14**: User can add optional notes on how they'd approach performing the song
@@ -70,7 +70,7 @@
 
 ### Aesthetic
 
-- [ ] **AEST-01**: App has a medieval illuminated manuscript visual style — warm parchment tones, earthy palette, not dark
+- [ ] **AEST-01**: App has a medieval illuminated manuscript visual style -- warm parchment tones, earthy palette, not dark
 - [ ] **AEST-02**: Card faces feature manuscript-inspired imagery (vines, instruments, cables, pedals, symbolic figures)
 - [ ] **AEST-03**: Typography and decorative borders evoke the feeling of a medieval manuscript throughout the app
 
@@ -83,7 +83,7 @@
 
 ### Export / Analysis
 
-- **EXPRT-V2-01**: Automated Claude analysis pipeline — submissions feed directly to Claude API without manual export step
+- **EXPRT-V2-01**: Automated Claude analysis pipeline -- submissions feed directly to Claude API without manual export step
 
 ### Sharing
 
@@ -94,11 +94,11 @@
 | Feature | Reason |
 |---------|--------|
 | Full authentication / login system | Simple name selector is sufficient for 2 known users; login adds friction with no benefit |
-| Real-time collaboration features | Not needed — both users collect independently, analysis happens after |
+| Real-time collaboration features | Not needed -- both users collect independently, analysis happens after |
 | Mobile-native app | Browser-based is sufficient; responsive design is acceptable but not native |
 | In-app Claude integration | Couples the tool to Claude API; clean file export is more flexible and simpler |
 | Song metadata auto-lookup (Spotify, MusicBrainz) | Adds API complexity; manual entry keeps the tool focused and private |
-| In-app comparison / overlap analysis | Let Claude do this from the exported data — it's better at it |
+| In-app comparison / overlap analysis | Let Claude do this from the exported data -- it's better at it |
 | Scaling beyond ~4 users | Intentionally personal tool; engineering for scale would add unnecessary complexity |
 
 ## Traceability
@@ -154,10 +154,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AEST-03 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 43 total
-- Mapped to phases: 43
-- Unmapped: 0 ✓
+- v1 requirements: 45 total
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after initial definition*
+*Last updated: 2026-03-01 after roadmap creation*
