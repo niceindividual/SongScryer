@@ -31,11 +31,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. SQLite database exists with the submissions schema and migration tooling runs without error
   4. Server auto-restarts after a crash or VPS reboot (PM2 configured)
   5. Database backup runs on schedule and stores a copy off-server
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Project scaffold: Express 5 server, SQLite database with migrations, 21 card seed data, Vite frontend with subpath config
+- [ ] 01-02-PLAN.md -- VPS deployment: nginx reverse proxy, PM2 process management, production verification (INFRA-04 backups deferred per user decision)
 
 ### Phase 2: Core Data Loop
 **Goal**: Users can select their identity, pick a card (static selection, no animation yet), fill out the complete adaptive form one question at a time, submit, and draw again -- the full data capture workflow
