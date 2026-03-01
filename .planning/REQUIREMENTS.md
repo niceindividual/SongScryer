@@ -7,7 +7,7 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: App is deployed and accessible at `https://h.eino.us/theyellow/songer/` with HTTPS and correct subpath routing for all assets and API calls
+- [ ] **INFRA-01**: App is deployed and accessible at `https://h.eino.us/theyellow/songscryer/` with HTTPS and correct subpath routing for all assets and API calls
 - [ ] **INFRA-02**: SQLite database stores all submissions with migration tooling in place from the first deploy
 - [ ] **INFRA-03**: Node.js server runs via PM2 with auto-restart on boot and log rotation configured
 - [ ] **INFRA-04**: Automated database backups are scheduled via cron and stored off-server

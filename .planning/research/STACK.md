@@ -1,6 +1,6 @@
 # Technology Stack
 
-**Project:** Music DNA (Songer) -- Song Submission App
+**Project:** Music DNA (SongScryer) -- Song Submission App
 **Researched:** 2026-03-01
 **Overall confidence:** MEDIUM (versions not verified against npm registry -- Read/Bash/WebSearch unavailable during research; rationale and choices are HIGH confidence)
 
@@ -38,7 +38,7 @@ This is a small personal tool for 2 users with an animated card UI, adaptive for
 | Ubuntu | 22.04 or 24.04 LTS | Server OS | Standard DigitalOcean VPS. LTS for stability. | HIGH |
 | nginx | Latest from apt | Reverse proxy, SSL termination, static file serving | Sits in front of Node.js. Handles SSL (Let's Encrypt), serves the built frontend static files directly (faster than Express for static), proxies `/api/*` to Node. | HIGH |
 | PM2 | ~5.x | Process manager | Keeps Node running, auto-restarts on crash, handles log rotation. Alternative: systemd unit file (also fine, but PM2 is simpler for single-app VPS). | HIGH (choice), MEDIUM (version) |
-| Let's Encrypt / certbot | Latest | SSL certificate | Free, automated. The URL is `https://h.eino.us/theyellow/songer/` so SSL is required. | HIGH |
+| Let's Encrypt / certbot | Latest | SSL certificate | Free, automated. The URL is `https://h.eino.us/theyellow/songscryer/` so SSL is required. | HIGH |
 | SQLite | Bundled with better-sqlite3 | Database | Zero-config, file-based, backed up by copying one file. Perfect for 2 users. | HIGH |
 
 ### Supporting Libraries
@@ -85,7 +85,7 @@ This is a small personal tool for 2 users with an animated card UI, adaptive for
 ## Project Structure
 
 ```
-songer/
+songscryer/
   frontend/
     index.html
     css/
@@ -107,7 +107,7 @@ songer/
       submissions.js       # CRUD for song submissions
       export.js            # CSV/JSON export endpoints
     data/
-      songer.db            # SQLite database file
+      songscryer.db            # SQLite database file
   vite.config.js           # Dev server config
   package.json
 ```
@@ -164,18 +164,18 @@ server {
     listen 443 ssl;
     server_name h.eino.us;
 
-    location /theyellow/songer/ {
+    location /theyellow/songscryer/ {
         proxy_pass http://127.0.0.1:3000/;
     }
 
     # Or serve static files directly from nginx for better performance:
-    location /theyellow/songer/assets/ {
+    location /theyellow/songscryer/assets/ {
         alias /path/to/dist/assets/;
     }
 }
 ```
 
-**SQLite path:** Store the database file outside the project's git-tracked directory, or add `*.db` to `.gitignore`. Back up with a simple cron job: `cp songer.db songer.db.bak`.
+**SQLite path:** Store the database file outside the project's git-tracked directory, or add `*.db` to `.gitignore`. Back up with a simple cron job: `cp songscryer.db songscryer.db.bak`.
 
 ## Version Verification Needed
 

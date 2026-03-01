@@ -6,7 +6,7 @@
 <domain>
 ## Phase Boundary
 
-Deploy the server, database, and subpath routing so everything downstream has a working production environment. Delivers: working SQLite schema with migrations, Express server deployed at `https://h.eino.us/theyellow/songer/`, PM2 running, HTTPS live, and the 21 card definitions seeded as data. The app does not need to do anything visible yet — this phase is about the foundation all other phases build on.
+Deploy the server, database, and subpath routing so everything downstream has a working production environment. Delivers: working SQLite schema with migrations, Express server deployed at `https://h.eino.us/theyellow/songscryer/`, PM2 running, HTTPS live, and the 21 card definitions seeded as data. The app does not need to do anything visible yet — this phase is about the foundation all other phases build on.
 
 </domain>
 
@@ -41,7 +41,7 @@ Deploy the server, database, and subpath routing so everything downstream has a 
 <specifics>
 ## Specific Ideas
 
-- Production URL is `https://h.eino.us/theyellow/songer/` — subpath routing must be correct from day one (assets and API URLs all break otherwise)
+- Production URL is `https://h.eino.us/theyellow/songscryer/` — subpath routing must be correct from day one (assets and API URLs all break otherwise)
 - The VPS is a DigitalOcean droplet running Ubuntu, full root access
 
 </specifics>

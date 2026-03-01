@@ -26,8 +26,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Depends on**: Nothing (first phase)
 **Requirements**: INFRA-01, INFRA-02, INFRA-03, INFRA-04
 **Success Criteria** (what must be TRUE):
-  1. Visiting `https://h.eino.us/theyellow/songer/` in a browser returns a response from the Node.js server with correct HTTPS
-  2. All static assets (JS, CSS) load correctly under the `/theyellow/songer/` subpath without 404s
+  1. Visiting `https://h.eino.us/theyellow/songscryer/` in a browser returns a response from the Node.js server with correct HTTPS
+  2. All static assets (JS, CSS) load correctly under the `/theyellow/songscryer/` subpath without 404s
   3. SQLite database exists with the submissions schema and migration tooling runs without error
   4. Server auto-restarts after a crash or VPS reboot (PM2 configured)
   5. Database backup runs on schedule and stores a copy off-server

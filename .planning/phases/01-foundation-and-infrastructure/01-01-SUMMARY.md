@@ -18,13 +18,13 @@
 - `server/db/seed.js` — standalone seed script: INSERT OR IGNORE from data/cards.json
 - `server/routes/submissions.js` — `submissionsRouter(db)` factory: POST /submissions (validates required fields, inserts, returns 201), GET /submissions (returns all)
 - `data/cards.json` — 21 card definitions with id, prompt, and tone across 6 tones: reflective, energetic, nostalgic, introspective, playful, provocative
-- `ecosystem.config.cjs` — PM2 config: name=songer, NODE_ENV=production, PORT=3000, DB_PATH=./data/songer.db, logs in ./logs/
+- `ecosystem.config.cjs` — PM2 config: name=songscryer, NODE_ENV=production, PORT=3000, DB_PATH=./data/songscryer.db, logs in ./logs/
 
 ### Task 2: Vite frontend stub with subpath configuration
 
 **Files created:**
-- `vite.config.js` — `root: 'frontend'`, `base: '/theyellow/songer/'`, API proxy `/theyellow/songer/api → http://localhost:3000` (strips subpath prefix), `outDir: '../dist'`
-- `frontend/index.html` — HTML5 boilerplate, title "Songer", links to css/main.css and js/app.js
+- `vite.config.js` — `root: 'frontend'`, `base: '/theyellow/songscryer/'`, API proxy `/theyellow/songscryer/api → http://localhost:3000` (strips subpath prefix), `outDir: '../dist'`
+- `frontend/index.html` — HTML5 boilerplate, title "SongScryer", links to css/main.css and js/app.js
 - `frontend/js/app.js` — On load, fetches `${import.meta.env.BASE_URL}api/submissions`, displays submission count (proves API connectivity and subpath correctness)
 - `frontend/css/main.css` — Minimal reset + warm parchment background (#f5f0e8) to visually confirm CSS loads
 
@@ -36,18 +36,18 @@ All checks passed:
 |-------|--------|
 | DB initialized with correct tables (cards + submissions) | PASS |
 | Vite build succeeds | PASS |
-| Built index.html contains /theyellow/songer/ subpath | PASS |
+| Built index.html contains /theyellow/songscryer/ subpath | PASS |
 | GET /api/submissions returns JSON array | PASS |
 | POST /api/submissions returns 201 | PASS |
-| data/songer.db exists with 21 cards seeded | PASS |
+| data/songscryer.db exists with 21 cards seeded | PASS |
 
 ## Key Decisions Made
 
 - **ESM throughout**: `"type":"module"` in package.json; all server files use `import`/`export`; `fileURLToPath` for `__dirname` equivalent
 - **Auto-seed on startup**: `server/index.js` seeds cards on startup only if cards table is empty (INSERT OR IGNORE is safe to re-run; auto-seed for cleaner deploy)
 - **Express 5 wildcard**: SPA fallback uses `/*splat` (Express 5 named wildcard syntax; `/*` would cause startup error)
-- **Subpath in 3 places**: Vite `base`, Vite proxy rewrite, and nginx (plan 01-02) — all must agree on `/theyellow/songer/`
-- **Test DB cleaned up**: `data/songer.db` removed after verification; regenerates on first server start
+- **Subpath in 3 places**: Vite `base`, Vite proxy rewrite, and nginx (plan 01-02) — all must agree on `/theyellow/songscryer/`
+- **Test DB cleaned up**: `data/songscryer.db` removed after verification; regenerates on first server start
 
 ## Requirements Satisfied
 

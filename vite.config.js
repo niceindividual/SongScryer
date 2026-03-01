@@ -2,12 +2,12 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'frontend',
-  base: '/theyellow/songer/',
+  base: '/theyellow/songscryer/',
   server: {
     proxy: {
-      '/theyellow/songer/api': {
+      '/theyellow/songscryer/api': {
         target: 'http://localhost:3000',
-        rewrite: (path) => path.replace(/^\/theyellow\/songer/, '')
+        rewrite: (path) => path.replace(/^\/theyellow\/songscryer/, '')
       }
     }
   },

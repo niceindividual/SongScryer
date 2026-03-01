@@ -1,5 +1,5 @@
 {
-  "name": "songer",
+  "name": "songscryer",
   "version": "1.0.0",
   "description": "A song submission app for two musicians finding common ground",
   "main": "server/index.js",

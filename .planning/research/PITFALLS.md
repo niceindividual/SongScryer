@@ -1,7 +1,7 @@
 # Domain Pitfalls
 
 **Domain:** Browser-based creative data collection app with animated UI, adaptive form flows, SQLite backend, and data export
-**Project:** Music DNA (Songer)
+**Project:** Music DNA (SongScryer)
 **Researched:** 2026-03-01
 
 ## Critical Pitfalls
@@ -203,13 +203,13 @@ Mistakes that cause rewrites or major issues.
 
 ### Pitfall 11: Reverse Proxy and HTTPS Misconfiguration
 
-**What goes wrong:** The app is served from `https://h.eino.us/theyellow/songer/` which means it's behind a reverse proxy (likely Nginx) at a subpath. Subpath routing is a notorious source of bugs: asset paths break (CSS/JS 404), API calls go to the wrong URL, redirects lose the subpath prefix, and WebSocket upgrades fail if ever needed.
+**What goes wrong:** The app is served from `https://h.eino.us/theyellow/songscryer/` which means it's behind a reverse proxy (likely Nginx) at a subpath. Subpath routing is a notorious source of bugs: asset paths break (CSS/JS 404), API calls go to the wrong URL, redirects lose the subpath prefix, and WebSocket upgrades fail if ever needed.
 
-**Why it happens:** Developing locally at `localhost:3000/` works perfectly. Deploying at `/theyellow/songer/` introduces a base path that every URL in the app must respect.
+**Why it happens:** Developing locally at `localhost:3000/` works perfectly. Deploying at `/theyellow/songscryer/` introduces a base path that every URL in the app must respect.
 
 **Prevention:**
 - Set a configurable `BASE_PATH` environment variable. Use it for all asset references, API endpoints, and redirects.
-- In HTML, use `<base href="/theyellow/songer/">` or prefix all paths explicitly.
+- In HTML, use `<base href="/theyellow/songscryer/">` or prefix all paths explicitly.
 - Test locally with the subpath: run behind a local Nginx or use Node's `--prefix` equivalent to simulate the production path.
 - For API calls from the frontend, construct URLs relative to the base path, never hardcode `/api/...`.
 - Set up HTTPS with Let's Encrypt/certbot on the VPS. Test that the cert auto-renews (certbot has a `--dry-run` flag).

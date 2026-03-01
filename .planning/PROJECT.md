@@ -84,7 +84,7 @@ Both musicians play acoustic and electric guitar, ukulele, electric bass, piano,
 
 **Hosting:** DigitalOcean VPS, Ubuntu, full control — can run Node.js, SQLite, any stack needed.
 
-**URL:** https://h.eino.us/theyellow/songer/
+**URL:** https://h.eino.us/theyellow/songscryer/
 
 ## Constraints
 

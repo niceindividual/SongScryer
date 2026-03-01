@@ -6,9 +6,9 @@
 
 ## Summary
 
-Phase 1 delivers the production environment that every subsequent phase builds on: an Express server deployed at `https://h.eino.us/theyellow/songer/`, SQLite database with migration tooling, PM2 process management, and the 21 card definitions seeded as data. The domain is well-established Node.js VPS deployment -- no cutting-edge technology, no ambiguity about approach.
+Phase 1 delivers the production environment that every subsequent phase builds on: an Express server deployed at `https://h.eino.us/theyellow/songscryer/`, SQLite database with migration tooling, PM2 process management, and the 21 card definitions seeded as data. The domain is well-established Node.js VPS deployment -- no cutting-edge technology, no ambiguity about approach.
 
-The most important finding is that **Express 5 is now stable** (v5.2.1, released after the initial project research). Express 5 offers automatic async error handling, which simplifies middleware. Since this is a greenfield project with no Express 4 code to migrate, Express 5 is the correct choice. The other key finding is that the subpath routing at `/theyellow/songer/` must be configured correctly in three places simultaneously (Vite `base`, nginx `location`, and Express route mounting) -- getting any one wrong causes cascading 404s that are confusing to debug.
+The most important finding is that **Express 5 is now stable** (v5.2.1, released after the initial project research). Express 5 offers automatic async error handling, which simplifies middleware. Since this is a greenfield project with no Express 4 code to migrate, Express 5 is the correct choice. The other key finding is that the subpath routing at `/theyellow/songscryer/` must be configured correctly in three places simultaneously (Vite `base`, nginx `location`, and Express route mounting) -- getting any one wrong causes cascading 404s that are confusing to debug.
 
 **Primary recommendation:** Start with a "hello world" deployed at the production URL before building any real features. Prove the nginx-to-Express proxy, subpath routing, and PM2 restart cycle work end-to-end first.
 
@@ -24,7 +24,7 @@ The most important finding is that **Express 5 is now stable** (v5.2.1, released
 - Code lives in a GitHub repo; deploy by SSHing into VPS and running `git pull` + `pm2 restart`
 - No CI/CD for now -- manual deploy is fine for a 2-user personal project
 - Backups deferred -- not implementing automated backups in this phase
-- Production URL is `https://h.eino.us/theyellow/songer/` -- subpath routing must be correct from day one
+- Production URL is `https://h.eino.us/theyellow/songscryer/` -- subpath routing must be correct from day one
 - The VPS is a DigitalOcean droplet running Ubuntu, full root access
 
 ### Claude's Discretion
@@ -48,7 +48,7 @@ The most important finding is that **Express 5 is now stable** (v5.2.1, released
 
 | ID | Description | Research Support |
 |----|-------------|-----------------|
-| INFRA-01 | App deployed at `https://h.eino.us/theyellow/songer/` with HTTPS and correct subpath routing | nginx reverse proxy config, Vite `base` option, Express route mounting, Let's Encrypt/certbot |
+| INFRA-01 | App deployed at `https://h.eino.us/theyellow/songscryer/` with HTTPS and correct subpath routing | nginx reverse proxy config, Vite `base` option, Express route mounting, Let's Encrypt/certbot |
 | INFRA-02 | SQLite database stores all submissions with migration tooling from first deploy | better-sqlite3 v12.x, manual numbered SQL migration runner, schema design with `submitted_raw` insurance column |
 | INFRA-03 | Node.js server runs via PM2 with auto-restart on boot and log rotation | PM2 v6.x ecosystem config, `pm2 startup`, pm2-logrotate module |
 | INFRA-04 | Automated database backups scheduled via cron and stored off-server | **CONFLICT: CONTEXT.md defers backups. User explicitly said "not implementing automated backups in this phase." Planner should skip INFRA-04 and note it as deferred.** |
@@ -101,7 +101,7 @@ pm2 install pm2-logrotate
 
 ### Recommended Project Structure
 ```
-songer/
+songscryer/
   frontend/
     index.html
     css/
@@ -128,7 +128,7 @@ songer/
 
 ### Pattern 1: Subpath-Aware Configuration (Three-Place Rule)
 
-**What:** The `/theyellow/songer/` subpath must be configured in three places simultaneously. Missing any one causes 404s.
+**What:** The `/theyellow/songscryer/` subpath must be configured in three places simultaneously. Missing any one causes 404s.
 
 **Where to configure:**
 
@@ -139,12 +139,12 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'frontend',
-  base: '/theyellow/songer/',
+  base: '/theyellow/songscryer/',
   server: {
     proxy: {
-      '/theyellow/songer/api': {
+      '/theyellow/songscryer/api': {
         target: 'http://localhost:3000',
-        rewrite: (path) => path.replace(/^\/theyellow\/songer/, '')
+        rewrite: (path) => path.replace(/^\/theyellow\/songscryer/, '')
       }
     }
   },
@@ -156,7 +156,7 @@ export default defineConfig({
 
 2. **nginx** -- location block with trailing-slash proxy_pass to strip the prefix:
 ```nginx
-location /theyellow/songer/ {
+location /theyellow/songscryer/ {
     proxy_pass http://127.0.0.1:3000/;
     proxy_set_header Host $http_host;
     proxy_set_header X-Real-IP $remote_addr;
@@ -164,7 +164,7 @@ location /theyellow/songer/ {
     proxy_set_header X-Forwarded-Proto $scheme;
 }
 ```
-The trailing `/` on `proxy_pass http://127.0.0.1:3000/;` is critical -- it strips `/theyellow/songer/` from the request before forwarding to Express. Without it, Express receives the full path and nothing matches.
+The trailing `/` on `proxy_pass http://127.0.0.1:3000/;` is critical -- it strips `/theyellow/songscryer/` from the request before forwarding to Express. Without it, Express receives the full path and nothing matches.
 
 3. **Express** -- serve static files and mount API routes at root (nginx strips the prefix):
 ```javascript
@@ -223,12 +223,12 @@ function initDatabase(dbPath) {
 // ecosystem.config.cjs
 module.exports = {
   apps: [{
-    name: 'songer',
+    name: 'songscryer',
     script: 'server/index.js',
     env: {
       NODE_ENV: 'production',
       PORT: 3000,
-      DB_PATH: './data/songer.db'
+      DB_PATH: './data/songscryer.db'
     },
     error_file: './logs/err.log',
     out_file: './logs/out.log',
@@ -251,7 +251,7 @@ pm2 set pm2-logrotate:retain 7
 
 ### Anti-Patterns to Avoid
 
-- **Hardcoded paths:** Never use `/theyellow/songer/` as a string literal in JavaScript. Use Vite's `import.meta.env.BASE_URL` on the frontend and environment variables on the backend.
+- **Hardcoded paths:** Never use `/theyellow/songscryer/` as a string literal in JavaScript. Use Vite's `import.meta.env.BASE_URL` on the frontend and environment variables on the backend.
 - **Database file in git:** Add `*.db` and `data/` to `.gitignore`. The database is runtime data, not source code.
 - **Skipping WAL mode:** Default SQLite journal mode causes SQLITE_BUSY under concurrent writes. Always enable WAL at init.
 - **Running `node server.js` directly on VPS:** Always use PM2. Direct execution dies when SSH disconnects.
@@ -269,9 +269,9 @@ pm2 set pm2-logrotate:retain 7
 ## Common Pitfalls
 
 ### Pitfall 1: Subpath Routing Mismatch
-**What goes wrong:** App works on localhost:3000 but all assets 404 on production because `/theyellow/songer/` prefix is not handled consistently.
+**What goes wrong:** App works on localhost:3000 but all assets 404 on production because `/theyellow/songscryer/` prefix is not handled consistently.
 **Why it happens:** Three independent configurations (Vite base, nginx location, Express static serving) must agree. Developing locally at `/` masks the problem.
-**How to avoid:** Deploy a "hello world" page first. Verify it loads with correct CSS/JS paths before building features. Test with `curl -I https://h.eino.us/theyellow/songer/` after every infrastructure change.
+**How to avoid:** Deploy a "hello world" page first. Verify it loads with correct CSS/JS paths before building features. Test with `curl -I https://h.eino.us/theyellow/songscryer/` after every infrastructure change.
 **Warning signs:** 404s for `.js` or `.css` files in browser console; API calls returning HTML instead of JSON.
 
 ### Pitfall 2: SQLite Schema Without Migration Path
@@ -293,10 +293,10 @@ pm2 set pm2-logrotate:retain 7
 **Warning signs:** App is down after VPS maintenance/reboot.
 
 ### Pitfall 5: nginx Trailing Slash on proxy_pass
-**What goes wrong:** Requests arrive at Express with the `/theyellow/songer/` prefix still attached, so no routes match.
+**What goes wrong:** Requests arrive at Express with the `/theyellow/songscryer/` prefix still attached, so no routes match.
 **Why it happens:** `proxy_pass http://127.0.0.1:3000` (no trailing slash) passes the full URI. `proxy_pass http://127.0.0.1:3000/` (with trailing slash) strips the location prefix.
 **How to avoid:** Always include the trailing slash on proxy_pass when stripping a location prefix. Test with `curl` to verify Express receives clean paths.
-**Warning signs:** Express logs show requests for `/theyellow/songer/api/submissions` instead of `/api/submissions`.
+**Warning signs:** Express logs show requests for `/theyellow/songscryer/api/submissions` instead of `/api/submissions`.
 
 ## Code Examples
 
@@ -364,7 +364,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Initialize database
-const db = initDatabase(process.env.DB_PATH || './data/songer.db');
+const db = initDatabase(process.env.DB_PATH || './data/songscryer.db');
 
 // Middleware
 app.use(helmet());
@@ -389,7 +389,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Songer server running on port ${PORT}`);
+  console.log(`SongScryer server running on port ${PORT}`);
 });
 ```
 

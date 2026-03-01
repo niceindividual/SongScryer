@@ -10,7 +10,7 @@ import fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const PORT = process.env.PORT || 3000;
-const DB_PATH = process.env.DB_PATH || path.join(__dirname, '../data/songer.db');
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, '../data/songscryer.db');
 
 // Initialize database
 const db = initDatabase(DB_PATH);
@@ -65,7 +65,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Songer server running on port ${PORT}`);
+  console.log(`SongScryer server running on port ${PORT}`);
 });
 
 export { app };

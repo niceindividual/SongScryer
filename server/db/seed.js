@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const dbPath = process.env.DB_PATH || path.join(__dirname, '../../data/songer.db');
+const dbPath = process.env.DB_PATH || path.join(__dirname, '../../data/songscryer.db');
 const cardsPath = path.join(__dirname, '../../data/cards.json');
 
 const db = initDatabase(dbPath);

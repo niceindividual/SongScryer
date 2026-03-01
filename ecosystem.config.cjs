@@ -1,11 +1,11 @@
 module.exports = {
   apps: [{
-    name: 'songer',
+    name: 'songscryer',
     script: 'server/index.js',
     env: {
       NODE_ENV: 'production',
       PORT: 3000,
-      DB_PATH: './data/songer.db'
+      DB_PATH: './data/songscryer.db'
     },
     error_file: './logs/err.log',
     out_file: './logs/out.log',

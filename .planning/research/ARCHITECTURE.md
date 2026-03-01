@@ -216,7 +216,7 @@ const TRANSITIONS = {
 **Why:** For a 2-user app, synchronous database access in Express route handlers is perfectly fine. No callback hell, no promise chains for simple queries. The code reads top-to-bottom.
 
 ```javascript
-const db = require('better-sqlite3')('songer.db');
+const db = require('better-sqlite3')('songscryer.db');
 const insert = db.prepare(`INSERT INTO submissions (...) VALUES (...)`);
 
 app.post('/api/submissions', (req, res) => {

@@ -1,17 +1,17 @@
 # Project Research Summary
 
-**Project:** Music DNA (Songer) — Song Submission App
+**Project:** Music DNA (SongScryer) — Song Submission App
 **Domain:** Browser-based creative data collection app with animated UI and adaptive form flows
 **Researched:** 2026-03-01
 **Confidence:** MEDIUM (training data; no live web verification available; well-established domains)
 
 ## Executive Summary
 
-Songer is a personal creative data-collection tool for two users (Matt and Mike) built around an Oblique Strategies-style card draw mechanic. Users draw one of 21 prompt cards, answer adaptive questions about a song it evokes, and the app accumulates a structured dataset for downstream Claude analysis. The research consensus is clear: this is a deliberately small-scale project and the entire architecture should reflect that. Vanilla JS + CSS + Express + SQLite is the correct stack — any framework, ORM, or database server would add overhead with zero return at this scale.
+SongScryer is a personal creative data-collection tool for two users (Matt and Mike) built around an Oblique Strategies-style card draw mechanic. Users draw one of 21 prompt cards, answer adaptive questions about a song it evokes, and the app accumulates a structured dataset for downstream Claude analysis. The research consensus is clear: this is a deliberately small-scale project and the entire architecture should reflect that. Vanilla JS + CSS + Express + SQLite is the correct stack — any framework, ORM, or database server would add overhead with zero return at this scale.
 
 The recommended build approach is data-first, animation-last. The cardinal mistake for this type of app is investing in the card shuffle/flip animation before the submit-to-store-to-export pipeline works end-to-end. Building in the opposite order (schema, API, form, then animation) means animation failures never block data integrity. The adaptive question flow is a copy/tone concern only — the data schema must be identical for all 21 cards. This invariant is the most important design principle in the system and must be enforced server-side, not just in the UI.
 
-The primary risks are schema brittleness (SQLite has limited ALTER TABLE support; getting it wrong early forces painful migrations), animation scope creep (visually rewarding but can consume the entire build timeline), and deployment gotchas around the `/theyellow/songer/` subpath (assets and API URLs all break unless the base path is configured from day one). All three risks are preventable with discipline: use a migration tool from the first commit, time-box animation work to after the data pipeline is proven, and test the production subpath with a "hello world" before building features.
+The primary risks are schema brittleness (SQLite has limited ALTER TABLE support; getting it wrong early forces painful migrations), animation scope creep (visually rewarding but can consume the entire build timeline), and deployment gotchas around the `/theyellow/songscryer/` subpath (assets and API URLs all break unless the base path is configured from day one). All three risks are preventable with discipline: use a migration tool from the first commit, time-box animation work to after the data pipeline is proven, and test the production subpath with a "hello world" before building features.
 
 ## Key Findings
 
@@ -91,7 +91,7 @@ See `.planning/research/PITFALLS.md` for full prevention strategies and phase wa
 
 4. **Export format as afterthought** — Design the target JSON and CSV formats before designing the schema. Include denormalized card prompt text, human-readable enum values, and a `_metadata` block in JSON exports. Test with real Google Sheets import early. Phase 1 decision.
 
-5. **Subpath routing breakage** — The production URL is `https://h.eino.us/theyellow/songer/`. Every asset reference and API call must respect this base path. Set `BASE_PATH` env var, use `<base href="...">` in HTML, test with production subpath before building features. Phase 1 (infrastructure).
+5. **Subpath routing breakage** — The production URL is `https://h.eino.us/theyellow/songscryer/`. Every asset reference and API call must respect this base path. Set `BASE_PATH` env var, use `<base href="...">` in HTML, test with production subpath before building features. Phase 1 (infrastructure).
 
 **Additional moderate pitfalls:** Enable SQLite WAL mode and `busy_timeout` at DB init (Pitfall 7); automated off-VPS backups before collecting real data (Pitfall 8); deck-style shuffle (not random dice) to feel fair with only 21 cards and ~42 expected submissions (Pitfall 9); PM2 or systemd before first deploy (Pitfall 10).
 
@@ -103,7 +103,7 @@ Research from all four files converges on the same build order. This is not coin
 
 **Rationale:** Every downstream component depends on the data model being correct. Schema mistakes are the most expensive to fix. Infrastructure mistakes (subpath, PM2, backups) block all meaningful testing on the real VPS. Get both right before writing a single form field.
 
-**Delivers:** Working SQLite schema with migrations, all 21 card definitions seeded, Express server deployed at the production subpath (`/theyellow/songer/`), PM2 running, HTTPS live, automated backups configured.
+**Delivers:** Working SQLite schema with migrations, all 21 card definitions seeded, Express server deployed at the production subpath (`/theyellow/songscryer/`), PM2 running, HTTPS live, automated backups configured.
 
 **Addresses (from FEATURES.md):** SQLite persistence, basic API scaffolding, export endpoint skeleton.
 
@@ -176,7 +176,7 @@ Research from all four files converges on the same build order. This is not coin
 - **Schema before everything:** SQLite ALTER TABLE limitations make early schema correctness a hard requirement. All 5 downstream phases depend on the data model.
 - **Functionality before animation:** PITFALLS.md identifies animation scope creep as a critical risk. ARCHITECTURE.md explicitly calls for build-order-following-data-flow. Both sources agree: animation is Phase 3, not Phase 1.
 - **Export format designed in Phase 1, implemented in Phase 4:** PITFALLS.md calls "export as afterthought" a critical pitfall. The format is specified early; implementation is deferred until the data it consumes is stable.
-- **Infrastructure on the VPS in Phase 1:** The subpath routing (`/theyellow/songer/`) is a known source of bugs that only manifest on the real server. Test early. Pitfall 11 is caught before it can block later phases.
+- **Infrastructure on the VPS in Phase 1:** The subpath routing (`/theyellow/songscryer/`) is a known source of bugs that only manifest on the real server. Test early. Pitfall 11 is caught before it can block later phases.
 - **Aesthetic last:** Both ARCHITECTURE.md (Anti-Pattern 4) and the project brief agree on this. Research affirms it unambiguously.
 
 ### Research Flags Summary
