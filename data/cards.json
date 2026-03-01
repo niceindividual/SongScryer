@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "prompt": "A song that changed how you hear music",
+    "tone": "reflective"
+  },
+  {
+    "id": 2,
+    "prompt": "A song you could play on repeat for an hour",
+    "tone": "energetic"
+  },
+  {
+    "id": 3,
+    "prompt": "A song that reminds you of a specific place",
+    "tone": "nostalgic"
+  },
+  {
+    "id": 4,
+    "prompt": "A song you wish you had written",
+    "tone": "introspective"
+  },
+  {
+    "id": 5,
+    "prompt": "A guilty pleasure song you'd defend to anyone",
+    "tone": "playful"
+  },
+  {
+    "id": 6,
+    "prompt": "A song that makes you want to move",
+    "tone": "energetic"
+  },
+  {
+    "id": 7,
+    "prompt": "A song with a moment that gives you chills",
+    "tone": "reflective"
+  },
+  {
+    "id": 8,
+    "prompt": "A song that got you through something hard",
+    "tone": "introspective"
+  },
+  {
+    "id": 9,
+    "prompt": "A song from before you were born that feels like yours",
+    "tone": "nostalgic"
+  },
+  {
+    "id": 10,
+    "prompt": "A song you'd play to introduce someone to your taste",
+    "tone": "reflective"
+  },
+  {
+    "id": 11,
+    "prompt": "A song with an outro you never skip",
+    "tone": "introspective"
+  },
+  {
+    "id": 12,
+    "prompt": "A song that sounds completely different on headphones",
+    "tone": "reflective"
+  },
+  {
+    "id": 13,
+    "prompt": "A song that makes a familiar emotion feel new",
+    "tone": "introspective"
+  },
+  {
+    "id": 14,
+    "prompt": "A song you've recommended to more than three people",
+    "tone": "energetic"
+  },
+  {
+    "id": 15,
+    "prompt": "A song that belongs to a specific era of your life",
+    "tone": "nostalgic"
+  },
+  {
+    "id": 16,
+    "prompt": "A song where the production is the whole point",
+    "tone": "reflective"
+  },
+  {
+    "id": 17,
+    "prompt": "A song that feels too short no matter how long it is",
+    "tone": "playful"
+  },
+  {
+    "id": 18,
+    "prompt": "A song with a chord change that stops you cold",
+    "tone": "introspective"
+  },
+  {
+    "id": 19,
+    "prompt": "A song that sounds like a secret",
+    "tone": "provocative"
+  },
+  {
+    "id": 20,
+    "prompt": "A song you'd want played at your best party",
+    "tone": "energetic"
+  },
+  {
+    "id": 21,
+    "prompt": "A song that makes the mundane feel cinematic",
+    "tone": "nostalgic"
+  }
+]
