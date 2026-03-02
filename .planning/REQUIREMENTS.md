@@ -50,9 +50,9 @@
 
 ### Submission
 
-- [ ] **SUBM-01**: User receives clear confirmation after a successful submission
-- [ ] **SUBM-02**: Submission is persisted to SQLite immediately on submit; server validates schema before accepting
-- [ ] **SUBM-03**: User can draw another card immediately after submission (draw-again flow)
+- [x] **SUBM-01**: User receives clear confirmation after a successful submission
+- [x] **SUBM-02**: Submission is persisted to SQLite immediately on submit; server validates schema before accepting
+- [x] **SUBM-03**: User can draw another card immediately after submission (draw-again flow)
 
 ### Export
 
@@ -138,9 +138,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FORM-18 | Phase 2 | Complete (02-01) |
 | FORM-19 | Phase 2 | Complete (02-01) |
 | FORM-20 | Phase 2 | Complete (02-01) |
-| SUBM-01 | Phase 2 | Pending |
-| SUBM-02 | Phase 2 | Pending |
-| SUBM-03 | Phase 2 | Pending |
+| SUBM-01 | Phase 2 | Complete (02-03) |
+| SUBM-02 | Phase 2 | Complete (02-03) |
+| SUBM-03 | Phase 2 | Complete (02-03) |
 | EXPRT-01 | Phase 4 | Pending |
 | EXPRT-02 | Phase 4 | Pending |
 | EXPRT-03 | Phase 4 | Pending |
@@ -160,4 +160,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-02 after 02-01 execution (IDNT-01/02, FORM-01 through FORM-20 complete)*
+*Last updated: 2026-03-02 after 02-03 execution (SUBM-01, SUBM-02, SUBM-03 complete — Phase 2 fully done)*
