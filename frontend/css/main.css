@@ -272,6 +272,12 @@ input[type="number"].question-input {
   accent-color: #2c2416;
 }
 
+.multi-select-option.disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 .rating-group {
   display: flex;
   align-items: center;

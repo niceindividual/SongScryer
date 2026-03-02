@@ -159,5 +159,6 @@ document.getElementById('app').addEventListener('change', (e) => {
   group.querySelectorAll('input[type=checkbox]').forEach(cb => {
     cb.disabled = atMax && !cb.checked;
     cb.closest('.multi-select-option')?.classList.toggle('selected', cb.checked);
+    cb.closest('.multi-select-option')?.classList.toggle('disabled', cb.disabled);
   });
 });
