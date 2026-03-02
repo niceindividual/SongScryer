@@ -47,12 +47,12 @@ Plans:
   3. User can fill out all required and optional fields (song title, artist, hooks, lyrics importance, energy, love rating, feasibility, desire, tempo, time signature, free text fields) with clear visual distinction between required and optional
   4. User receives confirmation after submitting, and the submission is persisted to SQLite with server-side schema validation
   5. User can immediately draw another card and submit again within the same session
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md -- State machine core: state.js (transitions), questions.js (17-question schema + tone copy map), api.js (submission fetch wrapper)
+- [ ] 02-02-PLAN.md -- Rendering layer: render.js (4 screen renderers + 6 input types), index.html (clean shell), main.css (all form and screen styles)
+- [ ] 02-03-PLAN.md -- Entry point wiring: app.js (boot from localStorage, event delegation, submission handler, draw-again flow) + human verification checkpoint
 
 ### Phase 3: Card Draw Animation
 **Goal**: The card draw experience feels like drawing from a physical deck -- animated shuffle, flip, and reveal -- replacing the static card selection from Phase 2
