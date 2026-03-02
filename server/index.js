@@ -48,8 +48,8 @@ app.use('/api', submissionsRouter(db));
 const distPath = path.join(__dirname, '../dist');
 app.use(express.static(distPath));
 
-// SPA fallback -- Express 5 named wildcard syntax
-app.get('/*splat', (req, res) => {
+// SPA fallback -- /{*splat} matches root / and all sub-paths in Express 5
+app.get('/{*splat}', (req, res) => {
   const indexPath = path.join(distPath, 'index.html');
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
