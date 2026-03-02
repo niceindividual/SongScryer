@@ -13,7 +13,7 @@ This roadmap delivers a creative song submission app for two musicians. The buil
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and Infrastructure** - Deploy the server, database, and subpath routing so everything downstream has a working production environment
-- [ ] **Phase 2: Core Data Loop** - Identity selection, adaptive form with all fields, submission persistence -- the complete data capture pipeline without animation
+- [x] **Phase 2: Core Data Loop** - Identity selection, adaptive form with all fields, submission persistence -- the complete data capture pipeline without animation (completed 2026-03-02)
 - [ ] **Phase 3: Card Draw Animation** - Animated shuffle, flip, and reveal sequence layered onto the proven data pipeline
 - [ ] **Phase 4: Export Pipeline** - JSON, CSV, and Claude-ready markdown exports with submitter filtering
 - [ ] **Phase 5: Collection Experience** - Card history tracking, completionism indicator, and submission gallery
@@ -118,7 +118,7 @@ Note: Phases 3, 4, and 5 all depend on Phase 2 but not on each other. However, b
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Infrastructure | 2/2 | Complete | 2026-03-01 |
-| 2. Core Data Loop | 2/3 | In Progress|  |
+| 2. Core Data Loop | 3/3 | Complete   | 2026-03-02 |
 | 3. Card Draw Animation | 0/1 | Not started | - |
 | 4. Export Pipeline | 0/1 | Not started | - |
 | 5. Collection Experience | 0/1 | Not started | - |
