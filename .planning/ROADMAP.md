@@ -51,8 +51,8 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md -- State machine core: state.js (transitions), questions.js (17-question schema + tone copy map), api.js (submission fetch wrapper)
-- [ ] 02-02-PLAN.md -- Rendering layer: render.js (4 screen renderers + 6 input types), index.html (clean shell), main.css (all form and screen styles)
-- [ ] 02-03-PLAN.md -- Entry point wiring: app.js (boot from localStorage, event delegation, submission handler, draw-again flow) + human verification checkpoint
+- [x] 02-02-PLAN.md -- Rendering layer: render.js (4 screen renderers + 6 input types), index.html (clean shell), main.css (all form and screen styles)
+- [x] 02-03-PLAN.md -- Entry point wiring: app.js (boot from localStorage, event delegation, submission handler, draw-again flow) + human verification checkpoint
 
 ### Phase 3: Card Draw Animation
 **Goal**: The card draw experience feels like drawing from a physical deck -- animated shuffle, flip, and reveal -- replacing the static card selection from Phase 2
