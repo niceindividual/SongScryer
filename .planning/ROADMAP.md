@@ -50,7 +50,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- State machine core: state.js (transitions), questions.js (17-question schema + tone copy map), api.js (submission fetch wrapper)
+- [x] 02-01-PLAN.md -- State machine core: state.js (transitions), questions.js (17-question schema + tone copy map), api.js (submission fetch wrapper)
 - [ ] 02-02-PLAN.md -- Rendering layer: render.js (4 screen renderers + 6 input types), index.html (clean shell), main.css (all form and screen styles)
 - [ ] 02-03-PLAN.md -- Entry point wiring: app.js (boot from localStorage, event delegation, submission handler, draw-again flow) + human verification checkpoint
 
@@ -118,7 +118,7 @@ Note: Phases 3, 4, and 5 all depend on Phase 2 but not on each other. However, b
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Infrastructure | 2/2 | Complete | 2026-03-01 |
-| 2. Core Data Loop | 0/3 | Not started | - |
+| 2. Core Data Loop | 1/3 | In progress | - |
 | 3. Card Draw Animation | 0/1 | Not started | - |
 | 4. Export Pipeline | 0/1 | Not started | - |
 | 5. Collection Experience | 0/1 | Not started | - |

@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 2 of 6 (Core Data Loop)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-03-01 -- Phase 1 complete, production verified
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-02 -- 02-01 complete (state.js, questions.js, api.js)
 
-Progress: [##........] 17%
+Progress: [###.......] 22%
 
 ## Performance Metrics
 
@@ -28,6 +28,7 @@ Progress: [##........] 17%
 | Phase | Plans | Status |
 |-------|-------|--------|
 | 1. Foundation and Infrastructure | 2/2 | Complete |
+| 2. Core Data Loop | 1/3 | In progress |
 
 ## Accumulated Context
 
@@ -38,6 +39,9 @@ Progress: [##........] 17%
 - Deployment: `vite` moved to regular dependencies (not devDeps) so VPS can run `npm run build`
 - Express 5: SPA catch-all uses `/{*splat}` not `/*splat` to match root `/`
 - Project renamed from Songer to SongScryer; production URL is `https://h.eino.us/theyellow/songscryer/`
+- 02-01: loadUser() added beyond required 7 exports to validate localStorage reads in consumers
+- 02-01: baseUrl passed as parameter to postSubmission (not import.meta.env) for testability
+- 02-01: State transitions always use spread — never mutate state directly (immutability contract)
 
 ### Pending Todos
 
@@ -49,6 +53,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-01
-Stopped at: Phase 1 complete and production-verified. Ready to plan Phase 2.
+Last session: 2026-03-02
+Stopped at: Completed 02-01-PLAN.md (state.js, questions.js, api.js created)
 Resume file: None

@@ -14,8 +14,8 @@
 
 ### Identity
 
-- [ ] **IDNT-01**: User can select their identity (Matt or Mike) before starting a session
-- [ ] **IDNT-02**: Identity selection persists across page refreshes via localStorage so users don't re-select every visit
+- [x] **IDNT-01**: User can select their identity (Matt or Mike) before starting a session
+- [x] **IDNT-02**: Identity selection persists across page refreshes via localStorage so users don't re-select every visit
 
 ### Card Draw
 
@@ -27,26 +27,26 @@
 
 ### Form
 
-- [ ] **FORM-01**: Form presents questions one at a time (progressive disclosure -- conversational feel, not a spreadsheet)
-- [ ] **FORM-02**: Question text and placeholder copy adapts tone/framing based on which card was drawn
-- [ ] **FORM-03**: All 21 cards produce identical underlying data fields -- adaptive framing is presentation-layer only, never schema-level
-- [ ] **FORM-04**: User can enter song title and artist name
-- [ ] **FORM-05**: User can write why this song matters / what it means (free text)
-- [ ] **FORM-06**: User can select up to 2 primary hooks from: melody / groove+rhythm / lyrics / chord progression / texture+production / energy+feel / arrangement / indefinable
-- [ ] **FORM-07**: User can select whether lyrics matter: central / somewhat / not really
-- [ ] **FORM-08**: User can enter a standout instrument or sonic element (short text)
-- [ ] **FORM-09**: User can enter an emotional quality descriptor (short text, e.g. melancholy, joyful, driving)
-- [ ] **FORM-10**: User can rate energy level on a 1-5 scale
-- [ ] **FORM-11**: User can rate how much they love the song on a 1-5 scale
-- [ ] **FORM-12**: User can select performance feasibility: yes as-is / yes with adaptation / probably not but the feel is the point / not sure
-- [ ] **FORM-13**: User can select performance desire: definitely / maybe / no
-- [ ] **FORM-14**: User can add optional notes on how they'd approach performing the song
-- [ ] **FORM-15**: User can enter optional key or tonal center
-- [ ] **FORM-16**: User can select tempo feel: slow / mid / uptempo / variable
-- [ ] **FORM-17**: User can enter optional approximate BPM
-- [ ] **FORM-18**: User can select time signature: 4/4 / 3/4 / 6/8 / odd meter / not sure
-- [ ] **FORM-19**: User can add any other optional notes (free text)
-- [ ] **FORM-20**: Required vs optional fields are visually distinct throughout the form
+- [x] **FORM-01**: Form presents questions one at a time (progressive disclosure -- conversational feel, not a spreadsheet)
+- [x] **FORM-02**: Question text and placeholder copy adapts tone/framing based on which card was drawn
+- [x] **FORM-03**: All 21 cards produce identical underlying data fields -- adaptive framing is presentation-layer only, never schema-level
+- [x] **FORM-04**: User can enter song title and artist name
+- [x] **FORM-05**: User can write why this song matters / what it means (free text)
+- [x] **FORM-06**: User can select up to 2 primary hooks from: melody / groove+rhythm / lyrics / chord progression / texture+production / energy+feel / arrangement / indefinable
+- [x] **FORM-07**: User can select whether lyrics matter: central / somewhat / not really
+- [x] **FORM-08**: User can enter a standout instrument or sonic element (short text)
+- [x] **FORM-09**: User can enter an emotional quality descriptor (short text, e.g. melancholy, joyful, driving)
+- [x] **FORM-10**: User can rate energy level on a 1-5 scale
+- [x] **FORM-11**: User can rate how much they love the song on a 1-5 scale
+- [x] **FORM-12**: User can select performance feasibility: yes as-is / yes with adaptation / probably not but the feel is the point / not sure
+- [x] **FORM-13**: User can select performance desire: definitely / maybe / no
+- [x] **FORM-14**: User can add optional notes on how they'd approach performing the song
+- [x] **FORM-15**: User can enter optional key or tonal center
+- [x] **FORM-16**: User can select tempo feel: slow / mid / uptempo / variable
+- [x] **FORM-17**: User can enter optional approximate BPM
+- [x] **FORM-18**: User can select time signature: 4/4 / 3/4 / 6/8 / odd meter / not sure
+- [x] **FORM-19**: User can add any other optional notes (free text)
+- [x] **FORM-20**: Required vs optional fields are visually distinct throughout the form
 
 ### Submission
 
@@ -111,33 +111,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 1 | Pending |
-| IDNT-01 | Phase 2 | Pending |
-| IDNT-02 | Phase 2 | Pending |
+| IDNT-01 | Phase 2 | Complete (02-01) |
+| IDNT-02 | Phase 2 | Complete (02-01) |
 | CARD-01 | Phase 3 | Pending |
 | CARD-02 | Phase 3 | Pending |
 | CARD-03 | Phase 3 | Pending |
 | CARD-04 | Phase 3 | Pending |
 | CARD-05 | Phase 3 | Pending |
-| FORM-01 | Phase 2 | Pending |
-| FORM-02 | Phase 2 | Pending |
-| FORM-03 | Phase 2 | Pending |
-| FORM-04 | Phase 2 | Pending |
-| FORM-05 | Phase 2 | Pending |
-| FORM-06 | Phase 2 | Pending |
-| FORM-07 | Phase 2 | Pending |
-| FORM-08 | Phase 2 | Pending |
-| FORM-09 | Phase 2 | Pending |
-| FORM-10 | Phase 2 | Pending |
-| FORM-11 | Phase 2 | Pending |
-| FORM-12 | Phase 2 | Pending |
-| FORM-13 | Phase 2 | Pending |
-| FORM-14 | Phase 2 | Pending |
-| FORM-15 | Phase 2 | Pending |
-| FORM-16 | Phase 2 | Pending |
-| FORM-17 | Phase 2 | Pending |
-| FORM-18 | Phase 2 | Pending |
-| FORM-19 | Phase 2 | Pending |
-| FORM-20 | Phase 2 | Pending |
+| FORM-01 | Phase 2 | Complete (02-01) |
+| FORM-02 | Phase 2 | Complete (02-01) |
+| FORM-03 | Phase 2 | Complete (02-01) |
+| FORM-04 | Phase 2 | Complete (02-01) |
+| FORM-05 | Phase 2 | Complete (02-01) |
+| FORM-06 | Phase 2 | Complete (02-01) |
+| FORM-07 | Phase 2 | Complete (02-01) |
+| FORM-08 | Phase 2 | Complete (02-01) |
+| FORM-09 | Phase 2 | Complete (02-01) |
+| FORM-10 | Phase 2 | Complete (02-01) |
+| FORM-11 | Phase 2 | Complete (02-01) |
+| FORM-12 | Phase 2 | Complete (02-01) |
+| FORM-13 | Phase 2 | Complete (02-01) |
+| FORM-14 | Phase 2 | Complete (02-01) |
+| FORM-15 | Phase 2 | Complete (02-01) |
+| FORM-16 | Phase 2 | Complete (02-01) |
+| FORM-17 | Phase 2 | Complete (02-01) |
+| FORM-18 | Phase 2 | Complete (02-01) |
+| FORM-19 | Phase 2 | Complete (02-01) |
+| FORM-20 | Phase 2 | Complete (02-01) |
 | SUBM-01 | Phase 2 | Pending |
 | SUBM-02 | Phase 2 | Pending |
 | SUBM-03 | Phase 2 | Pending |
@@ -160,4 +160,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after roadmap creation*
+*Last updated: 2026-03-02 after 02-01 execution (IDNT-01/02, FORM-01 through FORM-20 complete)*
