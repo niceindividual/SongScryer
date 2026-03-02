@@ -118,7 +118,7 @@ Note: Phases 3, 4, and 5 all depend on Phase 2 but not on each other. However, b
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Infrastructure | 2/2 | Complete | 2026-03-01 |
-| 2. Core Data Loop | 1/3 | In progress | - |
+| 2. Core Data Loop | 2/3 | In Progress|  |
 | 3. Card Draw Animation | 0/1 | Not started | - |
 | 4. Export Pipeline | 0/1 | Not started | - |
 | 5. Collection Experience | 0/1 | Not started | - |
