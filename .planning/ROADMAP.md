@@ -12,7 +12,7 @@ This roadmap delivers a creative song submission app for two musicians. The buil
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation and Infrastructure** - Deploy the server, database, and subpath routing so everything downstream has a working production environment
+- [x] **Phase 1: Foundation and Infrastructure** - Deploy the server, database, and subpath routing so everything downstream has a working production environment
 - [ ] **Phase 2: Core Data Loop** - Identity selection, adaptive form with all fields, submission persistence -- the complete data capture pipeline without animation
 - [ ] **Phase 3: Card Draw Animation** - Animated shuffle, flip, and reveal sequence layered onto the proven data pipeline
 - [ ] **Phase 4: Export Pipeline** - JSON, CSV, and Claude-ready markdown exports with submitter filtering
@@ -34,8 +34,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffold: Express 5 server, SQLite database with migrations, 21 card seed data, Vite frontend with subpath config
-- [ ] 01-02-PLAN.md -- VPS deployment: nginx reverse proxy, PM2 process management, production verification (INFRA-04 backups deferred per user decision)
+- [x] 01-01-PLAN.md -- Project scaffold: Express 5 server, SQLite database with migrations, 21 card seed data, Vite frontend with subpath config
+- [x] 01-02-PLAN.md -- VPS deployment: nginx reverse proxy, PM2 process management, production verification (INFRA-04 backups deferred per user decision)
 
 ### Phase 2: Core Data Loop
 **Goal**: Users can select their identity, pick a card (static selection, no animation yet), fill out the complete adaptive form one question at a time, submit, and draw again -- the full data capture workflow
@@ -117,7 +117,7 @@ Note: Phases 3, 4, and 5 all depend on Phase 2 but not on each other. However, b
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation and Infrastructure | 0/2 | Not started | - |
+| 1. Foundation and Infrastructure | 2/2 | Complete | 2026-03-01 |
 | 2. Core Data Loop | 0/3 | Not started | - |
 | 3. Card Draw Animation | 0/1 | Not started | - |
 | 4. Export Pipeline | 0/1 | Not started | - |
